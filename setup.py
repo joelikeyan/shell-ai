@@ -17,7 +17,8 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     extras_require={
-        'dev': ['setuptools', 'wheel', 'twine']
+        'dev': ['setuptools', 'wheel', 'twine'],
+        'trading': ['yfinance', 'pandas', 'numpy', 'scikit-learn'],
     },
     entry_points={
         'console_scripts': [
