@@ -18,6 +18,12 @@ You can install Shell-AI directly from PyPI using pip:
 pip install shell-ai
 ```
 
+For optional trading features that rely on `yfinance`, `pandas`, `numpy`, and `scikit-learn`, install with the `trading` extra:
+
+```bash
+pip install "shell-ai[trading]"
+```
+
 After installation, you can invoke the utility using the `shai` command.
 
 ## Usage
