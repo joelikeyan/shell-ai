@@ -36,8 +36,12 @@ class Portfolio:
     sector_allocation: Dict[str, float] = field(default_factory=dict)
 
     def _can_allocate(self, cost: float, sector: str, max_sector_alloc: float = 0.5) -> bool:
+        """Return True when the cost fits within cash and sector limits."""
+
         sector_total = self.sector_allocation.get(sector, 0.0)
-        return cost <= self.capital and sector_total + cost <= self.capital * max_sector_alloc
+        total_equity = self.capital + sum(self.sector_allocation.values())
+        sector_limit = total_equity * max_sector_alloc
+        return cost <= self.capital and sector_total + cost <= sector_limit
 
     def enter_position(
         self,
