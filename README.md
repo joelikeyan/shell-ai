@@ -77,6 +77,18 @@ The application will read from this file if it exists, overriding any existing e
 
 Run the application after setting these configurations.
 
+## Trading Assistant
+
+Shell-AI also includes a basic autonomous trading assistant that can scan markets, produce 30-, 60- and 90-day price predictions and manage a simulated portfolio with risk controls.
+
+```python
+from shell_ai import TradingAssistant
+
+assistant = TradingAssistant(capital=100000)
+assistant.evaluate("AAPL")
+assistant.daily_summary()
+```
+
 
 ## Contributing
 
